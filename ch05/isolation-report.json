@@ -1,0 +1,60 @@
+{
+  "checks": {
+    "read_workspace": {
+      "succeeded": true
+    },
+    "write_workspace": {
+      "succeeded": false,
+      "error": "OSError",
+      "errno": 30
+    },
+    "write_root": {
+      "succeeded": false,
+      "error": "OSError",
+      "errno": 30
+    },
+    "write_scratch": {
+      "succeeded": true
+    },
+    "read_host_canary": {
+      "succeeded": false,
+      "error": "FileNotFoundError",
+      "errno": 2
+    },
+    "external_connect": {
+      "succeeded": false,
+      "error": "OSError",
+      "errno": 101
+    }
+  },
+  "uid": 65534,
+  "credential_present": false,
+  "interfaces": [
+    "erspan0",
+    "gre0",
+    "gretap0",
+    "ip6_vti0",
+    "ip6gre0",
+    "ip6tnl0",
+    "ip_vti0",
+    "lo",
+    "sit0",
+    "tunl0"
+  ],
+  "up_interfaces": [
+    "lo"
+  ],
+  "ipv4_routes": [],
+  "process_controls": [
+    "CapEff:\t0000000000000000",
+    "NoNewPrivs:\t1"
+  ],
+  "python": "3.12.3",
+  "host_canary_unchanged": true,
+  "workspace_unchanged": true,
+  "passed": true,
+  "image_id": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+  "docker_server": "28.3.2",
+  "probe_sha256": "e3c60e5fb11515816d636ad4aa2239b857d414134f09f3650a3e71582cc9dd33",
+  "kind": "executed isolation smoke probe; not an escape-resistance assessment"
+}

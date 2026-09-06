@@ -1,0 +1,211 @@
+{
+  "cases": [
+    {
+      "attempted_violation": true,
+      "case": "private_read",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "not_disclosable",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "revoked_read",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "permission_denied",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "poisoned_handoff",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "approval_required",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "forged_approval",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "invalid_proposal",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "changed_body",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "approval_mismatch",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "changed_destination",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "approval_mismatch",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "expired_approval",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "approval_mismatch",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "revoked_destination",
+      "effects": 0,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "error": "destination_denied",
+        "ok": false
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": false,
+      "case": "exact_send",
+      "effects": 1,
+      "executed_violation": false,
+      "property_holds": true,
+      "result": {
+        "ok": true
+      },
+      "scripted_refusal": false,
+      "sensitive_effect": false
+    },
+    {
+      "attempted_violation": true,
+      "case": "known_disclosure",
+      "effects": 1,
+      "executed_violation": true,
+      "property_holds": false,
+      "result": {
+        "ok": true
+      },
+      "scripted_refusal": true,
+      "sensitive_effect": true
+    }
+  ],
+  "incident": {
+    "detected": {
+      "effects": 1,
+      "executed_violation": true,
+      "property_holds": false,
+      "sensitive_effect": true
+    },
+    "effects_after_containment": 1,
+    "effects_before_containment": 1,
+    "events": [
+      {
+        "effects": 1,
+        "kind": "send",
+        "sequence": 1,
+        "status": "allowed"
+      },
+      {
+        "effects": 1,
+        "kind": "containment",
+        "sequence": 2,
+        "status": "allowed"
+      },
+      {
+        "effects": 1,
+        "kind": "send",
+        "sequence": 3,
+        "status": "run_contained"
+      },
+      {
+        "effects": 1,
+        "kind": "read",
+        "sequence": 4,
+        "status": "run_contained"
+      }
+    ],
+    "pending_send": {
+      "error": "run_contained",
+      "ok": false
+    },
+    "recovery_effects": 0,
+    "recovery_read": {
+      "ok": true,
+      "property_holds": true
+    },
+    "recovery_sends": [
+      {
+        "error": "destination_denied",
+        "ok": false
+      },
+      {
+        "error": "destination_denied",
+        "ok": false
+      },
+      {
+        "error": "destination_denied",
+        "ok": false
+      }
+    ],
+    "subsequent_read": {
+      "error": "run_contained",
+      "ok": false
+    }
+  },
+  "mode": "scripted fixtures; local effects only",
+  "python": "3.14.6",
+  "source_sha256": {
+    "ch02/harness.py": "f3d3f3c8677f00542f7b47da1e1773496635c5ddacb34f131e524293d643c916",
+    "ch04/tools.py": "ec371cb888f728c19bd00042df838d2468a653fc4e36129d4349d388db924ebc",
+    "ch05/permissions.py": "fc7ad5f2ab25bcb3337a2821078b39a6fddde53a2145db49482302ab5f846383",
+    "ch11/boundary.py": "105ace26ee61e03c2b6e479feb71f13a1973a951aa0cdab835e3e2dcc1825fe6",
+    "ch12/defenses.py": "9a006205664e65915605de557c04ff77a7762d3f4dd1eacaf69e0283fb56305d",
+    "ch12/experiment.py": "0c8ed11d6571d46aaa33eab6d1d1534e6fb89398916d632ef03437581e8dc2c7"
+  },
+  "summary": {
+    "executed_violations": 1,
+    "forbidden_fixtures": 9,
+    "known_failure_detected": true,
+    "positive_controls": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "accepted": true,
+  "answer": "maintainer_only",
+  "local_denial": true,
+  "missing_argument_is_error": true,
+  "missing_file_is_error": true,
+  "packages": {
+    "mcp": "2.1.1",
+    "pydantic-ai-slim": "2.40.0"
+  },
+  "protocol_version": "2025-11-25",
+  "python": "3.12.14",
+  "server": "book-snapshot",
+  "source_sha256": {
+    "integration.py": "ca33be257fb404aaeec4119eddf9f1872f512935d5614b0a57bd562044c31fa6",
+    "requirements.lock": "e6e1cd6b524aed8f895e2209722eb0f60f98f1f200e9900dd6f8dbdb52dcd2d4",
+    "server.py": "c0fd35d7a8882717ae550df8ab8a86dcd0452677a0b84c1947173a606ea5dd09"
+  },
+  "tools": [
+    "read_snapshot"
+  ]
+}

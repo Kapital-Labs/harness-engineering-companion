@@ -1,0 +1,188 @@
+{
+  "kind": "executed fixed-fixture verification; not a model benchmark",
+  "docker_server": "28.3.2",
+  "source_sha256": {
+    "ch06/checks.py": "031c9fe723e5762cc417ea5cc6029100e2f4c24d36196f37452c80db690bf5ff",
+    "ch06/edits.py": "c12fbdd8a3f0856b55932fb1f9cd318dfe0db4c32154a5e74aadac516f90a160",
+    "ch06/demo.py": "431a5449704f085183c736103810682b5a203be2a0d5b2ffd926faf5962ea5d4",
+    "ch06/workflow.py": "d50f991d2d5f063067590e390049b03ab18dc91b19436b4085afa363a43e8a39",
+    "ch05/isolation.py": "e3c60e5fb11515816d636ad4aa2239b857d414134f09f3650a3e71582cc9dd33",
+    "ch05/permissions.py": "fc7ad5f2ab25bcb3337a2821078b39a6fddde53a2145db49482302ab5f846383",
+    "ch04/tools.py": "ec371cb888f728c19bd00042df838d2468a653fc4e36129d4349d388db924ebc",
+    "ch02/harness.py": "f3d3f3c8677f00542f7b47da1e1773496635c5ddacb34f131e524293d643c916"
+  },
+  "cases": {
+    "before": {
+      "status": "failed",
+      "exit_code": 1,
+      "output": "{\"checks\": {\"maintainer\": true, \"administrator\": false, \"viewer\": true, \"unknown\": true, \"caller\": false}, \"python\": \"3.12.3\"}\n",
+      "candidate_sha256": "63d84398ed8535140eb9486ebd223e1fd52b58f147cbf79fc7653ef146e56dbe",
+      "image_id": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+      "worker_sha256": "a6ef8ed5d842ef06ad32e17b5a6dfb4b3f093aeb546354a62704b8b2f5c501cf",
+      "transport_status": "finished",
+      "cleanup_status": "confirmed_absent"
+    },
+    "candidate": {
+      "status": "passed",
+      "exit_code": 0,
+      "checks": {
+        "maintainer": true,
+        "administrator": true,
+        "viewer": true,
+        "unknown": true,
+        "caller": true
+      },
+      "python": "3.12.3",
+      "candidate_sha256": "bde99bbb300e470abf93004c62fcde7ce8ffd666a6efa81daf846288b75bcd20",
+      "image_id": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+      "worker_sha256": "a6ef8ed5d842ef06ad32e17b5a6dfb4b3f093aeb546354a62704b8b2f5c501cf",
+      "transport_status": "finished",
+      "cleanup_status": "confirmed_absent"
+    },
+    "overbroad": {
+      "status": "failed",
+      "exit_code": 1,
+      "output": "{\"checks\": {\"maintainer\": true, \"administrator\": true, \"viewer\": false, \"unknown\": false, \"caller\": true}, \"python\": \"3.12.3\"}\n",
+      "candidate_sha256": "aa0caf5436e9ba8bfdc7c98a3764dffed294b7cdd4db423584c1c4c0eb5f5eff",
+      "image_id": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+      "worker_sha256": "a6ef8ed5d842ef06ad32e17b5a6dfb4b3f093aeb546354a62704b8b2f5c501cf",
+      "transport_status": "finished",
+      "cleanup_status": "confirmed_absent"
+    },
+    "syntax_error": {
+      "status": "failed",
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 3, in <module>\n  File \"/workspace/tracker/policy.py\", line 1\n    def can_close_issue(role)\n                             ^\nSyntaxError: expected ':'\n",
+      "candidate_sha256": "66b0c2f9304843313fbb819d59090e46cde3babc1417bce815770bfe75875e08",
+      "image_id": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+      "worker_sha256": "a6ef8ed5d842ef06ad32e17b5a6dfb4b3f093aeb546354a62704b8b2f5c501cf",
+      "transport_status": "finished",
+      "cleanup_status": "confirmed_absent"
+    }
+  },
+  "expected_outcomes_met": true,
+  "review_package": {
+    "base_sha256": "63d84398ed8535140eb9486ebd223e1fd52b58f147cbf79fc7653ef146e56dbe",
+    "candidate_sha256": "bde99bbb300e470abf93004c62fcde7ce8ffd666a6efa81daf846288b75bcd20",
+    "changed_paths": [
+      "tracker/policy.py"
+    ],
+    "diff": "--- a/tracker/policy.py\n+++ b/tracker/policy.py\n@@ -1,2 +1,2 @@\n def can_close_issue(role):\n-    return role == \"maintainer\"\n+    return role in {\"maintainer\", \"administrator\"}\n",
+    "trace": [
+      {
+        "kind": "started",
+        "data": {
+          "task": "Permit both maintainers and administrators to close issues; deny other roles.",
+          "max_steps": 6
+        }
+      },
+      {
+        "kind": "model_call",
+        "data": {
+          "step": 1
+        }
+      },
+      {
+        "kind": "tool_call",
+        "data": {
+          "call_id": "read",
+          "name": "read_file",
+          "arguments": {
+            "path": "tracker/policy.py"
+          }
+        }
+      },
+      {
+        "kind": "tool_result",
+        "data": {
+          "call_id": "read",
+          "result": {
+            "ok": true,
+            "data": {
+              "path": "tracker/policy.py",
+              "text": "def can_close_issue(role):\n    return role == \"maintainer\"",
+              "first_line": 1,
+              "last_line": 2,
+              "total_lines": 2,
+              "omitted_before": false,
+              "next_line": null,
+              "sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+            }
+          }
+        }
+      },
+      {
+        "kind": "model_call",
+        "data": {
+          "step": 2
+        }
+      },
+      {
+        "kind": "tool_call",
+        "data": {
+          "call_id": "edit",
+          "name": "apply_edit",
+          "arguments": {
+            "path": "tracker/policy.py",
+            "expected_sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "old": "role == \"maintainer\"",
+            "new": "role in {\"maintainer\", \"administrator\"}"
+          }
+        }
+      },
+      {
+        "kind": "tool_result",
+        "data": {
+          "call_id": "edit",
+          "result": {
+            "ok": true,
+            "data": {
+              "path": "tracker/policy.py",
+              "before_sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+              "sha256": "50f25c627b3500f39928c2d02fd520b26d39a2dda565a6b4e12b48f3a1662203"
+            }
+          }
+        }
+      },
+      {
+        "kind": "model_call",
+        "data": {
+          "step": 3
+        }
+      },
+      {
+        "kind": "final",
+        "data": {
+          "text": "Candidate edit prepared. Behavioral checks have not run."
+        }
+      },
+      {
+        "kind": "stopped",
+        "data": {
+          "status": "completed"
+        }
+      }
+    ],
+    "verification": {
+      "status": "passed",
+      "exit_code": 0,
+      "checks": {
+        "maintainer": true,
+        "administrator": true,
+        "viewer": true,
+        "unknown": true,
+        "caller": true
+      },
+      "python": "3.12.3",
+      "candidate_sha256": "bde99bbb300e470abf93004c62fcde7ce8ffd666a6efa81daf846288b75bcd20",
+      "image_id": "sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e",
+      "worker_sha256": "a6ef8ed5d842ef06ad32e17b5a6dfb4b3f093aeb546354a62704b8b2f5c501cf",
+      "transport_status": "finished",
+      "cleanup_status": "confirmed_absent"
+    },
+    "publication": {
+      "status": "not_requested"
+    },
+    "run_status": "completed"
+  }
+}

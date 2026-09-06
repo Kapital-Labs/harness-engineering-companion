@@ -1,0 +1,282 @@
+{
+  "kind": "local receiver simulation with actual SQLite effects; no model calls",
+  "python": "3.14.6",
+  "sqlite": "3.53.4",
+  "verification": "synthetic hash precondition; no behavioral checks executed",
+  "rows": [
+    {
+      "case": "lost_ack_same_key",
+      "first": {
+        "status": "unknown",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "confirmed",
+        "record": {
+          "actor": "team-a",
+          "attempts": 2,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": {
+            "effect_id": 1,
+            "request_sha256": "99558b7b4980d79a54bb0f9739a247555c905440b47efa563d0103bcf403d1a0"
+          },
+          "state": "confirmed",
+          "version": 1
+        }
+      },
+      "effect_count": 1
+    },
+    {
+      "case": "known_rejection",
+      "first": {
+        "status": "retryable",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "prepared",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "confirmed",
+        "record": {
+          "actor": "team-a",
+          "attempts": 2,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": {
+            "effect_id": 1,
+            "request_sha256": "99558b7b4980d79a54bb0f9739a247555c905440b47efa563d0103bcf403d1a0"
+          },
+          "state": "confirmed",
+          "version": 1
+        }
+      },
+      "effect_count": 1
+    },
+    {
+      "case": "grant_revoked",
+      "first": {
+        "status": "unknown",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "blocked",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "effect_count": 1
+    },
+    {
+      "case": "no_idempotency_contract",
+      "first": {
+        "status": "unknown",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "reconcile",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "effect_count": 1
+    },
+    {
+      "case": "deadline_exhausted",
+      "first": {
+        "status": "unknown",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "deadline",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "unknown",
+          "version": 1
+        }
+      },
+      "effect_count": 1
+    },
+    {
+      "case": "candidate_changed",
+      "first": {
+        "status": "retryable",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "prepared",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "needs_verification",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "prepared",
+          "version": 1
+        }
+      },
+      "effect_count": 0
+    },
+    {
+      "case": "attempts_exhausted",
+      "first": {
+        "status": "retryable",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "prepared",
+          "version": 1
+        }
+      },
+      "second": {
+        "status": "attempt_limit",
+        "record": {
+          "actor": "team-a",
+          "attempts": 1,
+          "key": "review-1",
+          "payload": {
+            "candidate_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "destination": "review-queue"
+          },
+          "receipt": null,
+          "state": "prepared",
+          "version": 1
+        }
+      },
+      "effect_count": 0
+    }
+  ],
+  "naive_control": {
+    "case": "new_key_after_lost_ack",
+    "effect_count": 2
+  },
+  "delay_examples_seconds": [
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    4.0,
+    4.0
+  ],
+  "source_sha256": {
+    "ch02/anthropic_adapter.py": "14c366fd639903d62555ef3ae123f52c2b9cd600e1df6e958cf748b51b4d85a4",
+    "ch02/demo.py": "76792c528da653fc244768bacde1f4077d9edbeb95db82aff45f869242004f48",
+    "ch02/harness.py": "f3d3f3c8677f00542f7b47da1e1773496635c5ddacb34f131e524293d643c916",
+    "ch04/compare.py": "3c47a8ab4ece56c7eeb2d80367999635f2404248e274a5b2aff04cd4937a0e71",
+    "ch04/tools.py": "ec371cb888f728c19bd00042df838d2468a653fc4e36129d4349d388db924ebc",
+    "ch05/demo.py": "66e560bacd5b7556ed6084b369dae1e3101cdd6c2b6c96bba1360d3766b287bd",
+    "ch05/isolation.py": "e3c60e5fb11515816d636ad4aa2239b857d414134f09f3650a3e71582cc9dd33",
+    "ch05/permissions.py": "fc7ad5f2ab25bcb3337a2821078b39a6fddde53a2145db49482302ab5f846383",
+    "ch06/checks.py": "031c9fe723e5762cc417ea5cc6029100e2f4c24d36196f37452c80db690bf5ff",
+    "ch06/demo.py": "431a5449704f085183c736103810682b5a203be2a0d5b2ffd926faf5962ea5d4",
+    "ch06/edits.py": "c12fbdd8a3f0856b55932fb1f9cd318dfe0db4c32154a5e74aadac516f90a160",
+    "ch06/workflow.py": "d50f991d2d5f063067590e390049b03ab18dc91b19436b4085afa363a43e8a39",
+    "ch09/checkpoint.py": "ba60cd430ade8b6a1350614a1ed7288fb110044a64a44187d1d7c0c950b70da1",
+    "ch09/experiment.py": "8b8daa78d4868a5895815d02d2d6fe5671ccc251cb99936ffe0799a5380bba5b",
+    "ch10/experiment.py": "167992608697a4bbd7b865719970c374d72c91845d4cff9a7f72c8a75a79bf7d",
+    "ch10/retry.py": "3f5df584374f39d80e6177f2e718a5f004c0d274121de24bd5c0cda2f33106f7"
+  }
+}

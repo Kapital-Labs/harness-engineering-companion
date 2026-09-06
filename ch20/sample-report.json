@@ -1,0 +1,65 @@
+{
+  "python": "3.14.6",
+  "quality": {
+    "input_digest": "ef1015907e482dd02393cb64c9bd76ef335feebb239c812e2fc2a33ee6aefdd6",
+    "issues": [
+      {
+        "row": 1,
+        "rule": "duplicate_id"
+      },
+      {
+        "row": 1,
+        "rule": "missing_email"
+      }
+    ],
+    "proposed_action": "review_quarantine",
+    "rows_checked": 3,
+    "rows_deleted": 0,
+    "snapshot": "batch-fixture-v1"
+  },
+  "research": {
+    "claims": [
+      "20 seconds",
+      "30 seconds"
+    ],
+    "sources": [
+      {
+        "digest": "a3516ab97cc21def2f07bfc560f4f0927a090a970900d00d8971bcce05628834",
+        "id": "release-note",
+        "revision": "r1",
+        "value": "30 seconds"
+      },
+      {
+        "digest": "6dac627725e0c244d65bd1ebd313d5305bd73f7de6f5dab7d0c54cad0123172e",
+        "id": "config-reference",
+        "revision": "r2",
+        "value": "20 seconds"
+      }
+    ],
+    "status": "conflict"
+  },
+  "research_missing": {
+    "claims": [],
+    "sources": [],
+    "status": "insufficient_evidence"
+  },
+  "source_sha256": {
+    "ch18/service.py": "d661ab637df4858db60f488f23bee166ba2e18aaec44d903ef631e1ecd76ff42",
+    "ch20/domains.py": "33e3dfa469496809c550928576dc0c188926e82c4701fecf7e6ffb333766bee9",
+    "ch20/experiment.py": "510f58ed657077740c27f9a009e2db4137d13971f90714baa49efc38b38bda17"
+  },
+  "support": {
+    "approved": true,
+    "before_approval": 0,
+    "duplicate_approval": false,
+    "local_receipts": 1,
+    "proposal": {
+      "account": "a",
+      "amount_cents": 1200,
+      "order": "o",
+      "policy_version": "refund-fixture-v1",
+      "status": "proposal"
+    },
+    "real_refunds": 0
+  }
+}

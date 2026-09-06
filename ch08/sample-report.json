@@ -1,0 +1,550 @@
+{
+  "kind": "deterministic navigation controls, not model performance",
+  "python": "3.14.6",
+  "rows": [
+    {
+      "case": "original",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 1,
+      "response_bytes": 103,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "found",
+        "path": "tracker/policy.py",
+        "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n"
+      },
+      "sufficient_definition": true,
+      "acquired": [
+        {
+          "path": "tracker/policy.py",
+          "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "original",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 881,
+      "index_build_source_bytes": 96,
+      "index_reused_stale": false,
+      "result": {
+        "status": "found",
+        "name": "can_close_issue",
+        "path": "tracker/policy.py",
+        "start": 1,
+        "end": 2,
+        "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n",
+        "source_sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+        "check": {
+          "chapter": "ch06",
+          "entrypoint": "checks.py",
+          "requires": "approved local image ID and operator invocation"
+        },
+        "verification": "not_run"
+      },
+      "sufficient_definition": true,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "tracker/policy.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "policy-behavior"
+        },
+        {
+          "source_sha256": {
+            "tracker/policy.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "tracker/policy.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": []
+        },
+        {
+          "status": "found",
+          "name": "can_close_issue",
+          "path": "tracker/policy.py",
+          "start": 1,
+          "end": 2,
+          "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n",
+          "source_sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+          "check": {
+            "chapter": "ch06",
+            "entrypoint": "checks.py",
+            "requires": "approved local image ID and operator invocation"
+          },
+          "verification": "not_run"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "moved_updated",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 152,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "not_found"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "error": "unknown_file",
+          "path": "tracker/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "legacy/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "src/policy.py"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "moved_updated",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 865,
+      "index_build_source_bytes": 96,
+      "index_reused_stale": false,
+      "result": {
+        "status": "found",
+        "name": "can_close_issue",
+        "path": "core/rules.py",
+        "start": 1,
+        "end": 2,
+        "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n",
+        "source_sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+        "check": {
+          "chapter": "ch06",
+          "entrypoint": "checks.py",
+          "requires": "approved local image ID and operator invocation"
+        },
+        "verification": "not_run"
+      },
+      "sufficient_definition": true,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "policy-behavior"
+        },
+        {
+          "source_sha256": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "core/rules.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": []
+        },
+        {
+          "status": "found",
+          "name": "can_close_issue",
+          "path": "core/rules.py",
+          "start": 1,
+          "end": 2,
+          "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n",
+          "source_sha256": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+          "check": {
+            "chapter": "ch06",
+            "entrypoint": "checks.py",
+            "requires": "approved local image ID and operator invocation"
+          },
+          "verification": "not_run"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "moved_stale_guide",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 152,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "not_found"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "error": "unknown_file",
+          "path": "tracker/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "legacy/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "src/policy.py"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "moved_stale_guide",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 2,
+      "response_bytes": 490,
+      "index_build_source_bytes": 96,
+      "index_reused_stale": false,
+      "result": {
+        "status": "stale_guidance"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "tracker/policy.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "policy-behavior"
+        },
+        {
+          "source_sha256": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "core/rules.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "moved_stale_map",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 152,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "not_found"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "error": "unknown_file",
+          "path": "tracker/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "legacy/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "src/policy.py"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "moved_stale_map",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 2,
+      "response_bytes": 494,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": true,
+      "result": {
+        "status": "stale_map"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "policy-behavior"
+        },
+        {
+          "source_sha256": {
+            "tracker/policy.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "tracker/policy.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "duplicate",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 152,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "not_found"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "error": "unknown_file",
+          "path": "tracker/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "legacy/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "src/policy.py"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "duplicate",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 2,
+      "response_bytes": 639,
+      "index_build_source_bytes": 155,
+      "index_reused_stale": false,
+      "result": {
+        "status": "ambiguous"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "policy-behavior"
+        },
+        {
+          "source_sha256": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "other/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "core/rules.py",
+              "start": 1,
+              "end": 2
+            },
+            {
+              "name": "can_close_issue",
+              "path": "other/rules.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "syntax_error",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 3,
+      "response_bytes": 152,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "not_found"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "error": "unknown_file",
+          "path": "tracker/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "legacy/policy.py"
+        },
+        {
+          "error": "unknown_file",
+          "path": "src/policy.py"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "syntax_error",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 2,
+      "response_bytes": 616,
+      "index_build_source_bytes": 108,
+      "index_reused_stale": false,
+      "result": {
+        "status": "incomplete_map"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "policy-behavior"
+        },
+        {
+          "source_sha256": {
+            "broken.py": "acc6cea497935ae04d5505e95f1d264c9d12161ca862e79ed0e6e9ac88d5575a",
+            "core/rules.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "core/rules.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": [
+            {
+              "path": "broken.py",
+              "line": 1,
+              "kind": "syntax_error"
+            }
+          ]
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "unknown_check",
+      "route": "guessed_paths",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 1,
+      "response_bytes": 103,
+      "index_build_source_bytes": 0,
+      "index_reused_stale": false,
+      "result": {
+        "status": "found",
+        "path": "tracker/policy.py",
+        "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n"
+      },
+      "sufficient_definition": true,
+      "acquired": [
+        {
+          "path": "tracker/policy.py",
+          "text": "def can_close_issue(role):\n    return role == \"maintainer\"\n"
+        }
+      ],
+      "verification": "not_run"
+    },
+    {
+      "case": "unknown_check",
+      "route": "maintained_guidance",
+      "task": "Locate the current definition of can_close_issue and inspect its body.",
+      "read_budget": 3,
+      "reads": 2,
+      "response_bytes": 495,
+      "index_build_source_bytes": 96,
+      "index_reused_stale": false,
+      "result": {
+        "status": "unknown_check"
+      },
+      "sufficient_definition": false,
+      "acquired": [
+        {
+          "owner": "issue-tracker-maintainers",
+          "entry_symbol": "can_close_issue",
+          "reviewed_sources": {
+            "tracker/policy.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b"
+          },
+          "check_id": "run-anything"
+        },
+        {
+          "source_sha256": {
+            "tracker/policy.py": "4ed5249a86bbeb056a53f0903ae88a5759b5ee0c6da7f911e3b443910ee7122b",
+            "tracker/views.py": "e45d9b6d76c539d8dd6cf306a3e378fdc500ba764fc14b7fb9dce69685c69e4e"
+          },
+          "symbols": [
+            {
+              "name": "can_close_issue",
+              "path": "tracker/policy.py",
+              "start": 1,
+              "end": 2
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "verification": "not_run"
+    }
+  ],
+  "source_sha256": {
+    "experiment.py": "1a8ecb61a997129543e8604a1ece2e6cba88fd48e5c25930547c1c6ce922e14c",
+    "navigation.py": "d22c1780e4e0589cf38243d9300568b9ec9c65e4c2b0ee968bf0abc8c96d4957",
+    "preflight.py": "77a4a5dc2bb8eabafa5082441b6375214d04f4ac3ea9225faf6848f150dfe471"
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "cases": [
+    {
+      "actual_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+      "artifact_matches": true,
+      "case": "success",
+      "claimed_success": true,
+      "diagnosis": "matching_artifact",
+      "trace": {
+        "expected_span_count": 7,
+        "run_id": "run-success",
+        "schema": 1,
+        "spans": [
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044322451083,
+            "name": "run",
+            "operation_id": null,
+            "parent_id": null,
+            "span_id": "s1",
+            "start_ns": 454044322228125,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044322266750,
+            "name": "selection",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s2",
+            "start_ns": 454044322251541,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044322269500,
+            "name": "authorization",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s3",
+            "start_ns": 454044322268333,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044322273833,
+            "name": "export",
+            "operation_id": "export-1",
+            "parent_id": "s1",
+            "span_id": "s4",
+            "start_ns": 454044322272125,
+            "status": "error"
+          },
+          {
+            "attempt": 2,
+            "attributes": {
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044322403041,
+            "name": "export",
+            "operation_id": "export-1",
+            "parent_id": "s1",
+            "span_id": "s5",
+            "start_ns": 454044322275583,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "matches": true,
+              "observed_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044322448375,
+            "name": "verification",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s6",
+            "start_ns": 454044322404916,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "claimed_success": true
+            },
+            "end_ns": 454044322450791,
+            "name": "final",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s7",
+            "start_ns": 454044322450000,
+            "status": "ok"
+          }
+        ],
+        "versions": {
+          "adapter": "local-json-v1",
+          "controller": "ch13-v1",
+          "model": "scripted-no-provider",
+          "policy": "review-v1"
+        }
+      }
+    },
+    {
+      "actual_sha256": "29648c48f2fa107b730d9017f8a524210541f10f55512d220b32740aaca0f482",
+      "artifact_matches": false,
+      "case": "wrong_export",
+      "claimed_success": true,
+      "diagnosis": "export_mismatch",
+      "trace": {
+        "expected_span_count": 6,
+        "run_id": "run-wrong_export",
+        "schema": 1,
+        "spans": [
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044322790875,
+            "name": "run",
+            "operation_id": null,
+            "parent_id": null,
+            "span_id": "s1",
+            "start_ns": 454044322597541,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044322605250,
+            "name": "selection",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s2",
+            "start_ns": 454044322599708,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044322606750,
+            "name": "authorization",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s3",
+            "start_ns": 454044322606208,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044322743291,
+            "name": "export",
+            "operation_id": "export-1",
+            "parent_id": "s1",
+            "span_id": "s4",
+            "start_ns": 454044322608416,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "matches": false,
+              "observed_sha256": "29648c48f2fa107b730d9017f8a524210541f10f55512d220b32740aaca0f482"
+            },
+            "end_ns": 454044322788625,
+            "name": "verification",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s5",
+            "start_ns": 454044322744625,
+            "status": "error"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "claimed_success": true
+            },
+            "end_ns": 454044322790500,
+            "name": "final",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s6",
+            "start_ns": 454044322789833,
+            "status": "ok"
+          }
+        ],
+        "versions": {
+          "adapter": "local-json-v1",
+          "controller": "ch13-v1",
+          "model": "scripted-no-provider",
+          "policy": "review-v1"
+        }
+      }
+    },
+    {
+      "actual_sha256": "29648c48f2fa107b730d9017f8a524210541f10f55512d220b32740aaca0f482",
+      "artifact_matches": false,
+      "case": "wrong_choice",
+      "claimed_success": true,
+      "diagnosis": "proposal_mismatch",
+      "trace": {
+        "expected_span_count": 6,
+        "run_id": "run-wrong_choice",
+        "schema": 1,
+        "spans": [
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044323073666,
+            "name": "run",
+            "operation_id": null,
+            "parent_id": null,
+            "span_id": "s1",
+            "start_ns": 454044322906750,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "selected_sha256": "29648c48f2fa107b730d9017f8a524210541f10f55512d220b32740aaca0f482"
+            },
+            "end_ns": 454044322912791,
+            "name": "selection",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s2",
+            "start_ns": 454044322908250,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044322913958,
+            "name": "authorization",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s3",
+            "start_ns": 454044322913500,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "selected_sha256": "29648c48f2fa107b730d9017f8a524210541f10f55512d220b32740aaca0f482"
+            },
+            "end_ns": 454044322998625,
+            "name": "export",
+            "operation_id": "export-1",
+            "parent_id": "s1",
+            "span_id": "s4",
+            "start_ns": 454044322915541,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "matches": false,
+              "observed_sha256": "29648c48f2fa107b730d9017f8a524210541f10f55512d220b32740aaca0f482"
+            },
+            "end_ns": 454044323068791,
+            "name": "verification",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s5",
+            "start_ns": 454044322999833,
+            "status": "error"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "claimed_success": true
+            },
+            "end_ns": 454044323073250,
+            "name": "final",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s6",
+            "start_ns": 454044323071833,
+            "status": "ok"
+          }
+        ],
+        "versions": {
+          "adapter": "local-json-v1",
+          "controller": "ch13-v1",
+          "model": "scripted-no-provider",
+          "policy": "review-v1"
+        }
+      }
+    },
+    {
+      "actual_sha256": null,
+      "artifact_matches": false,
+      "case": "write_failure",
+      "claimed_success": true,
+      "diagnosis": "write_failed",
+      "trace": {
+        "expected_span_count": 6,
+        "run_id": "run-write_failure",
+        "schema": 1,
+        "spans": [
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044323270375,
+            "name": "run",
+            "operation_id": null,
+            "parent_id": null,
+            "span_id": "s1",
+            "start_ns": 454044323243125,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044323251500,
+            "name": "selection",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s2",
+            "start_ns": 454044323245333,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {},
+            "end_ns": 454044323253041,
+            "name": "authorization",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s3",
+            "start_ns": 454044323252500,
+            "status": "ok"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "selected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371"
+            },
+            "end_ns": 454044323256458,
+            "name": "export",
+            "operation_id": "export-1",
+            "parent_id": "s1",
+            "span_id": "s4",
+            "start_ns": 454044323254916,
+            "status": "error"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "expected_sha256": "0c1ed984ba92113f98490fc311fae022dc97503fed809d5a4084e09729203371",
+              "matches": false
+            },
+            "end_ns": 454044323268208,
+            "name": "verification",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s5",
+            "start_ns": 454044323257333,
+            "status": "error"
+          },
+          {
+            "attempt": 1,
+            "attributes": {
+              "claimed_success": true
+            },
+            "end_ns": 454044323270083,
+            "name": "final",
+            "operation_id": null,
+            "parent_id": "s1",
+            "span_id": "s6",
+            "start_ns": 454044323269333,
+            "status": "ok"
+          }
+        ],
+        "versions": {
+          "adapter": "local-json-v1",
+          "controller": "ch13-v1",
+          "model": "scripted-no-provider",
+          "policy": "review-v1"
+        }
+      }
+    }
+  ],
+  "mode": "scripted decisions; local artifact writes",
+  "python": "3.14.6",
+  "source_sha256": {
+    "ch02/harness.py": "f3d3f3c8677f00542f7b47da1e1773496635c5ddacb34f131e524293d643c916",
+    "ch04/tools.py": "ec371cb888f728c19bd00042df838d2468a653fc4e36129d4349d388db924ebc",
+    "ch05/permissions.py": "fc7ad5f2ab25bcb3337a2821078b39a6fddde53a2145db49482302ab5f846383",
+    "ch06/edits.py": "c12fbdd8a3f0856b55932fb1f9cd318dfe0db4c32154a5e74aadac516f90a160",
+    "ch13/experiment.py": "ae5f79728bdd23290bbfb50653b232f9d1de72259491b2d126b1bc507672fabe",
+    "ch13/tracing.py": "9c29281865f611fddc4d01eb16d741f0fc7f59ef0e94955e44e27d20ea7b94b0"
+  },
+  "timing": "actual perf_counter_ns; not model or service latency"
+}

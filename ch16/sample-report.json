@@ -1,0 +1,267 @@
+{
+  "mode": "scripted proposals; actual bounded thread execution",
+  "python": "3.14.6",
+  "source_sha256": {
+    "coordination.py": "4dfd6d558e1da1ec0ce9e30644b32eb4628819c5fb9a2b988631455c7b70b2b8",
+    "experiment.py": "86b4839fac54b576cd730e615d474c6fc025abadb87a67ee34d180519394c029"
+  },
+  "summaries": {
+    "parallel": {
+      "accepted": 1,
+      "fixture_units": 11,
+      "proposal_calls": 11,
+      "trials": 5
+    },
+    "reviewed": {
+      "accepted": 1,
+      "fixture_units": 13,
+      "proposal_calls": 11,
+      "trials": 5
+    },
+    "single": {
+      "accepted": 1,
+      "fixture_units": 11,
+      "proposal_calls": 6,
+      "trials": 5
+    }
+  },
+  "trials": [
+    {
+      "accepted": true,
+      "base_unchanged": true,
+      "candidate": {
+        "client.json": {
+          "timeout": 30
+        },
+        "server.json": {
+          "timeout": 30
+        }
+      },
+      "candidate_digest": "2a8d7405f4b01b8972b6ee4cfb8af4281b6932a1a073c293e9aaf493d5e91806",
+      "case": "correct",
+      "fixture_units_used": 2,
+      "mode": "single",
+      "proposal_calls": 1,
+      "reply_count": 1,
+      "review_approved": null,
+      "status": "assembled"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": {
+        "client.json": {
+          "timeout": 20
+        },
+        "server.json": {
+          "timeout": 20
+        }
+      },
+      "candidate_digest": "a7c40a3e6f3bb15e37f58e51cbcd8ea77c87bbb70ba1822fd606762c693f687c",
+      "case": "wrong_shared_assumption",
+      "fixture_units_used": 2,
+      "mode": "single",
+      "proposal_calls": 1,
+      "reply_count": 1,
+      "review_approved": null,
+      "status": "assembled"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "conflict",
+      "fixture_units_used": 3,
+      "mode": "single",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": null,
+      "status": "conflicting_path"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "stale",
+      "fixture_units_used": 2,
+      "mode": "single",
+      "proposal_calls": 1,
+      "reply_count": 1,
+      "review_approved": null,
+      "status": "stale_reply"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "missing",
+      "fixture_units_used": 2,
+      "mode": "single",
+      "proposal_calls": 1,
+      "reply_count": 0,
+      "review_approved": null,
+      "status": "incomplete_result"
+    },
+    {
+      "accepted": true,
+      "base_unchanged": true,
+      "candidate": {
+        "client.json": {
+          "timeout": 30
+        },
+        "server.json": {
+          "timeout": 30
+        }
+      },
+      "candidate_digest": "2a8d7405f4b01b8972b6ee4cfb8af4281b6932a1a073c293e9aaf493d5e91806",
+      "case": "correct",
+      "fixture_units_used": 2,
+      "mode": "parallel",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": null,
+      "status": "assembled"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": {
+        "client.json": {
+          "timeout": 20
+        },
+        "server.json": {
+          "timeout": 20
+        }
+      },
+      "candidate_digest": "a7c40a3e6f3bb15e37f58e51cbcd8ea77c87bbb70ba1822fd606762c693f687c",
+      "case": "wrong_shared_assumption",
+      "fixture_units_used": 2,
+      "mode": "parallel",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": null,
+      "status": "assembled"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "conflict",
+      "fixture_units_used": 3,
+      "mode": "parallel",
+      "proposal_calls": 3,
+      "reply_count": 3,
+      "review_approved": null,
+      "status": "conflicting_path"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "stale",
+      "fixture_units_used": 2,
+      "mode": "parallel",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": null,
+      "status": "stale_reply"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "missing",
+      "fixture_units_used": 2,
+      "mode": "parallel",
+      "proposal_calls": 2,
+      "reply_count": 1,
+      "review_approved": null,
+      "status": "incomplete_result"
+    },
+    {
+      "accepted": true,
+      "base_unchanged": true,
+      "candidate": {
+        "client.json": {
+          "timeout": 30
+        },
+        "server.json": {
+          "timeout": 30
+        }
+      },
+      "candidate_digest": "2a8d7405f4b01b8972b6ee4cfb8af4281b6932a1a073c293e9aaf493d5e91806",
+      "case": "correct",
+      "fixture_units_used": 3,
+      "mode": "reviewed",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": true,
+      "status": "assembled"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": {
+        "client.json": {
+          "timeout": 20
+        },
+        "server.json": {
+          "timeout": 20
+        }
+      },
+      "candidate_digest": "a7c40a3e6f3bb15e37f58e51cbcd8ea77c87bbb70ba1822fd606762c693f687c",
+      "case": "wrong_shared_assumption",
+      "fixture_units_used": 3,
+      "mode": "reviewed",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": true,
+      "status": "assembled"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "conflict",
+      "fixture_units_used": 3,
+      "mode": "reviewed",
+      "proposal_calls": 3,
+      "reply_count": 3,
+      "review_approved": null,
+      "status": "conflicting_path"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "stale",
+      "fixture_units_used": 2,
+      "mode": "reviewed",
+      "proposal_calls": 2,
+      "reply_count": 2,
+      "review_approved": null,
+      "status": "stale_reply"
+    },
+    {
+      "accepted": false,
+      "base_unchanged": true,
+      "candidate": null,
+      "candidate_digest": null,
+      "case": "missing",
+      "fixture_units_used": 2,
+      "mode": "reviewed",
+      "proposal_calls": 2,
+      "reply_count": 1,
+      "review_approved": null,
+      "status": "incomplete_result"
+    }
+  ]
+}

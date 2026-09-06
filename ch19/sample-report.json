@@ -1,0 +1,129 @@
+{
+  "bridge_reader_admitted": true,
+  "cohort_20_percent": {
+    "tenant-a": false,
+    "tenant-b": false,
+    "tenant-c": false
+  },
+  "gates": {
+    "bad_upgrade": false,
+    "fixed_upgrade": true
+  },
+  "manifest_sha256": {
+    "bad_upgrade": "a91fcc4e1f40d3061f451afacc8129c8880602037fb2fd29b83d40f133a39c17",
+    "baseline": "8f20f81c0229d73851e1d3f6c97c5d4837870f5f4d978d561e6fa1dbd2535993",
+    "fixed_upgrade": "1008fc1664b9b4ff532558ce22ec9a246261a95a4d5d5966ad396e47886e3b22"
+  },
+  "manifests": {
+    "bad_upgrade": {
+      "environment": "offline-python",
+      "grader": "elapsed-budget-v1",
+      "migration": "bad_upgrade",
+      "model": "scripted",
+      "policy": "read-only-v1",
+      "prompt": "timeout-task-v1",
+      "state_schema": 2,
+      "tool": "reader-v1"
+    },
+    "baseline": {
+      "environment": "offline-python",
+      "grader": "elapsed-budget-v1",
+      "migration": "baseline",
+      "model": "scripted",
+      "policy": "read-only-v1",
+      "prompt": "timeout-task-v1",
+      "state_schema": 1,
+      "tool": "reader-v1"
+    },
+    "fixed_upgrade": {
+      "environment": "offline-python",
+      "grader": "elapsed-budget-v1",
+      "migration": "fixed_upgrade",
+      "model": "scripted",
+      "policy": "read-only-v1",
+      "prompt": "timeout-task-v1",
+      "state_schema": 2,
+      "tool": "reader-v1"
+    }
+  },
+  "old_reader_rollback_admitted": false,
+  "python": "3.14.6",
+  "source_sha256": {
+    "experiment.py": "6cf7388a2f3edb98c3d07086cb7079e4425fb0b7ee068e268bf4f9dd8b8d8b95",
+    "releases.py": "b444185f33632085333d708d8fac077b18853a40e2b85e664310fc0c270c02fe"
+  },
+  "trials": [
+    {
+      "actual_ms": 1000,
+      "config": "baseline",
+      "expected_ms": 1000,
+      "original_unchanged": true,
+      "passed": true,
+      "timeout_seconds": 1
+    },
+    {
+      "actual_ms": 30000,
+      "config": "baseline",
+      "expected_ms": 30000,
+      "original_unchanged": true,
+      "passed": true,
+      "timeout_seconds": 30
+    },
+    {
+      "actual_ms": 120000,
+      "config": "baseline",
+      "expected_ms": 120000,
+      "original_unchanged": true,
+      "passed": true,
+      "timeout_seconds": 120
+    },
+    {
+      "actual_ms": 1,
+      "config": "bad_upgrade",
+      "expected_ms": 1000,
+      "original_unchanged": true,
+      "passed": false,
+      "timeout_seconds": 1
+    },
+    {
+      "actual_ms": 30,
+      "config": "bad_upgrade",
+      "expected_ms": 30000,
+      "original_unchanged": true,
+      "passed": false,
+      "timeout_seconds": 30
+    },
+    {
+      "actual_ms": 120,
+      "config": "bad_upgrade",
+      "expected_ms": 120000,
+      "original_unchanged": true,
+      "passed": false,
+      "timeout_seconds": 120
+    },
+    {
+      "actual_ms": 1000,
+      "config": "fixed_upgrade",
+      "expected_ms": 1000,
+      "original_unchanged": true,
+      "passed": true,
+      "timeout_seconds": 1
+    },
+    {
+      "actual_ms": 30000,
+      "config": "fixed_upgrade",
+      "expected_ms": 30000,
+      "original_unchanged": true,
+      "passed": true,
+      "timeout_seconds": 30
+    },
+    {
+      "actual_ms": 120000,
+      "config": "fixed_upgrade",
+      "expected_ms": 120000,
+      "original_unchanged": true,
+      "passed": true,
+      "timeout_seconds": 120
+    }
+  ]
+}

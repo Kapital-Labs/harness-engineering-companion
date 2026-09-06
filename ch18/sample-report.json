@@ -1,0 +1,29 @@
+{
+  "approved": true,
+  "cancelled": true,
+  "child_exit": 23,
+  "clock": "explicit logical seconds; no wall-clock waiting",
+  "duplicate_approval": false,
+  "effects": [
+    {
+      "artifact": "{\"timeout\": 30}",
+      "artifact_hash": "2e134e47e356ce08bffed9fc79e7f38fa3b38ef0d3812f182202731896133dc4",
+      "id": "job",
+      "tenant": "alpha"
+    }
+  ],
+  "fresh_submit": true,
+  "late_submit": false,
+  "other_tenant_effects": [],
+  "persisted_after_exit": {
+    "generation": 1,
+    "state": "running"
+  },
+  "python": "3.14.6",
+  "replacement_generation": 2,
+  "source_sha256": {
+    "experiment.py": "1cc65b954577c70ad04599ff19e5b89eca2afdd28308a30839f9378e68f62b5a",
+    "service.py": "d661ab637df4858db60f488f23bee166ba2e18aaec44d903ef631e1ecd76ff42"
+  },
+  "stale_submit": false
+}
