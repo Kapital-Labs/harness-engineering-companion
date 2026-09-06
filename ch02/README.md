@@ -31,7 +31,7 @@ YOUR_AVAILABLE_MODEL_ID is a command argument you must replace, not a published 
 
 The adapter uses the documented native tool-use protocol. It supports one client tool call per turn and text final answers. It rejects unsupported blocks and incomplete output rather than silently treating a partial reply as a completed answer. Extended thinking, server tools, streaming, and parallel tool calls are outside this chapter's adapter contract.
 
-**Verification boundary:** Offline tests cover request construction and response handling with synthetic provider fixtures. No live provider call has been made for this draft. These tests do not establish account compatibility or real-model task performance.
+**Verification boundary:** Offline tests cover request construction and response handling with synthetic provider fixtures. No live provider call has been made for this release. These tests do not establish account compatibility or real-model task performance.
 
 ## What this small harness does and does not enforce
 

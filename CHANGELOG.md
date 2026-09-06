@@ -1,5 +1,9 @@
 # Changelog
 
+## First Edition — v1.0.1
+
+Documentation-only correction: replace draft wording and production-review history with current reader-facing verification notes and per-chapter test totals. Update the recommended download. Code, tests, pinned dependencies, and saved reports are unchanged from v1.0.0.
+
 ## First Edition — v1.0.0
 
 Initial public companion for *Harness Engineering: Building, Evaluating, and Operating Reliable AI Agents*, by Brandon Kaplan.

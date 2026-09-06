@@ -6,14 +6,14 @@ Start with Chapter 2's small execution loop. Later folders either reuse an earli
 
 ## Download
 
-Get the [first-edition release](https://github.com/Kapital-Labs/harness-engineering-companion/releases/tag/first-edition-v1.0.0) and download `harness-engineering-first-edition-v1.0.0.zip`. Extract the ZIP and open its top-level directory before following the commands below. You do not need Git to use the examples.
+Get the [first-edition release](https://github.com/Kapital-Labs/harness-engineering-companion/releases/tag/first-edition-v1.0.1) and download `harness-engineering-first-edition-v1.0.1.zip`. Extract the ZIP and open its top-level directory before following the commands below. You do not need Git to use the examples.
 
 If you prefer Git:
 
 ```sh
 git clone https://github.com/Kapital-Labs/harness-engineering-companion.git
 cd harness-engineering-companion
-git checkout first-edition-v1.0.0
+git checkout first-edition-v1.0.1
 ```
 
 The release preserves the examples for the first edition. The default branch may contain later corrections; use a numbered release for reproducibility.

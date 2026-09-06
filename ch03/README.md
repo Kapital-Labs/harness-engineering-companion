@@ -48,6 +48,6 @@ python3 evaluate.py --candidate live --model YOUR_AVAILABLE_MODEL_ID --repeats 2
 
 The example makes up to six model calls per trial across five tasks. Two repeats can therefore attempt up to 60 model calls. The command runs sequentially and does not retry failures automatically. The adapter's socket timeout is not a whole-suite deadline.
 
-Live reports retain the requested model ID and code/task fingerprints. The current adapter does not export usage totals, so live token usage and provider cost are null. Offline provider charges are zero; this is not an estimate of CPU, electricity, or labor cost. No live trial has been executed for this draft.
+Live reports retain the requested model ID and code/task fingerprints. The current adapter does not export usage totals, so live token usage and provider cost are null. Offline provider charges are zero; this is not an estimate of CPU, electricity, or labor cost. No live trial has been executed for this release.
 
 See shared [References](../REFERENCES.md) for documentation dates and [Compatibility notes](../COMPATIBILITY.md) for actual verification.
