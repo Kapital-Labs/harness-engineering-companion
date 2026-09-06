@@ -27,4 +27,4 @@ The budget is a process-local lock-protected counter for known work units, with 
 
 The independent acceptance oracle compares the candidate with the exact two-file requirement. The deliberately weak reviewer only checks equality of values, so it approves a shared wrong value. No live reviewer calibration, statistical independence, general coding quality, generated-code execution, real checkout merging, tenant authentication, network permissions, or durable worker lifecycle is measured.
 
-Source-matched listings, exercise arithmetic, and report reproduction are recorded in the book's Chapter 16 verification notes. Shared source references and tested versions live in `../REFERENCES.md` and `../COMPATIBILITY.md`.
+Run the tests and experiment above to check the integration rules and reproduce `sample-report.json`. Shared source references and tested versions live in `../REFERENCES.md` and `../COMPATIBILITY.md`.
